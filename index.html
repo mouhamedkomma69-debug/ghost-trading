@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHOST TRADING</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#07111f;color:#f1f5f9;font-family:Arial,sans-serif}
+header{background:#0d1b2a;padding:22px;text-align:center;border-bottom:2px solid #b7d63f}
+header h1{color:#c8e34b;margin:0;font-size:30px}
+header p{color:#aab8c8}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:15px}
+nav a{color:#d5e3f0;text-decoration:none;padding:10px}
+main{max-width:900px;margin:auto;padding:16px}
+.hero{background:#102438;padding:25px;border-radius:15px;margin-bottom:20px}
+h2{color:#c8e34b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#102033;padding:18px;border:1px solid #243d53;border-radius:12px;margin-bottom:14px}
+button{background:#c8e34b;border:0;padding:12px 16px;border-radius:8px;font-weight:bold}
+input{width:100%;padding:12px;margin:8px 0;border-radius:6px;border:1px solid #496176}
+footer{text-align:center;padding:25px;color:#9aabba}
+.small{font-size:13px;color:#aab8c8}
+</style>
+</head>
+<body>
+<header>
+<h1>GHOST TRADING</h1>
+<p>Comprendre les marchés. Protéger son capital. Progresser.</p>
+</header>
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#marches">Marchés</a>
+<a href="#calendrier">Économie</a>
+<a href="#cours">Formations</a>
+<a href="#risque">Gestion du risque</a>
+</nav>
+<main>
+<section class="hero" id="accueil">
+<h2>Bienvenue dans l'univers GHOST</h2>
+<p>Un espace en français pour apprendre le trading, comprendre les données économiques et analyser les marchés financiers.</p>
+<p>Or (XAUUSD) · Dollar (DXY) · Forex · Actualités économiques</p>
+</section>
+<section id="marches">
+<h2>Les marchés à surveiller</h2>
+<div class="grid">
+<div class="card"><h3>🥇 Or — XAUUSD</h3><p>Observe la tendance, les niveaux importants et les réactions aux nouvelles économiques.</p></div>
+<div class="card"><h3>💵 Dollar — DXY</h3><p>Un dollar plus fort peut exercer une pression sur l'or, mais la réaction dépend du contexte.</p></div>
+<div class="card"><h3>📊 Obligations américaines</h3><p>Surveille les rendements obligataires et les anticipations de taux de la Fed.</p></div>
+</div>
+</section>
+<section id="calendrier" class="card">
+<h2>Calendrier économique</h2>
+<p>Consulte les annonces importantes : CPI, PCE, NFP, décisions de la Fed et taux d'intérêt.</p>
+<p>Compare toujours le résultat réel, les prévisions et le chiffre précédent.</p>
+<a href="https://www.investing.com/economic-calendar/" target="_blank" rel="noopener" style="color:#c8e34b">Consulter le calendrier économique ↗</a>
+<p class="small">Les données en direct ne sont pas encore intégrées à ce site.</p>
+</section>
+<section id="cours">
+<h2>Mini-formation</h2>
+<div class="card"><h3>1. Comprendre le marché</h3><p>Le trading consiste à acheter ou vendre un actif en anticipant un mouvement de prix. Le bénéfice n'est jamais garanti.</p></div>
+<div class="card"><h3>2. Comprendre les annonces</h3><p>Un chiffre économique supérieur aux attentes peut influencer les taux, le dollar et l'or. Le contexte reste essentiel.</p></div>
+<div class="card"><h3>3. Comprendre le graphique</h3><p>Apprends les bougies, la tendance, le support, la résistance et la structure du marché avant de chercher une entrée.</p></div>
+</section>
+<section id="risque" class="card">
+<h2>Calculateur de risque</h2>
+<p>Capital du compte (en dollars)</p>
+<input id="capital" type="number" placeholder="Exemple : 100">
+<p>Risque par trade (en %)</p>
+<input id="pourcent" type="number" value="1" min="0.1" max="100" step="0.1">
+<button onclick="calculer()">Calculer mon risque</button>
+<h3 id="resultat">Montant à risque : —</h3>
+<p class="small">Ce calcul donne uniquement le montant théorique à risquer, pas la taille du lot.</p>
+</section>
+<section class="card">
+<h2>Règles GHOST</h2>
+<p>✓ Protéger son capital en priorité.</p>
+<p>✓ Utiliser un stop-loss adapté.</p>
+<p>✓ Éviter de trader sous l'effet des émotions.</p>
+<p>✓ S'entraîner en démo avant de risquer de l'argent réel.</p>
+</section>
+</main>
+<footer>© 2026 GHOST TRADING · Apprendre avant de risquer.</footer>
+<script>
+function calculer(){
+let c=Number(document.getElementById('capital').value);
+let p=Number(document.getElementById('pourcent').value);
+let r=document.getElementById('resultat');
+if(c<=0||p<=0||p>100){r.textContent="Entre un capital et un pourcentage valides.";return;}
+r.textContent="Montant à risque : "+(c*p/100).toFixed(2)+" $";
+}
+</script>
+</body>
+</html>
